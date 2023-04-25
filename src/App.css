@@ -1,38 +1,257 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.home{
+  display: inline-block;
+  margin-right: 20px;
+}
+.home:hover{
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.item-container {
+  /* background-color: cadetblue; */
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px;
+  /* background: linear-gradient(to right, #ff3333, #f8ff339f) */
+}
+
+.item-card {
+  height: 450px;
+  width: 300px;
+  background-color: rgb(249, 249, 250);
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.396);
+}
+
+.item-image {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  padding: 5px;
+}
+
+.btn {
+  height: 50px;
+  width: 70%;
+  border-color: transparent;
+  font-weight: 600;
+  color: orange;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0.02px 0.02px 7px rgba(0, 0, 0, 0.51);
+  margin-top: 30px;
+
+}
+
+.btn:hover {
+  background-color: black;
+  transition: 0.3s ease-in-out;
+  color: white;
+  cursor: pointer;
+}
+
+.item-name,
+.item-rating,
+.item-price {
+  padding: 5px;
+}
+
+.item-name {
+  font-weight: 500;
+}
+
+.navbar {
+  height: 100px;
+  width: 100%;
+  background-color: darkblue;
+  background: linear-gradient(to right, rgb(4, 180, 189), rgba(4, 130, 188, 0.604));
+  color: whitesmoke;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.navbar-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.offer-img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50px;
+  margin-left: 20px;
+}
+
+.button {
+  height: 50px;
+  width: 150px;
+  border-radius: 5px;
+  border-color: transparent;
+  background-color: white;
+  color: orange;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cart-img {
+  height: 20px;
+  width: 20px;
+}
+
+.navbar-name a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 30px;
+}
+
+.noitems {
+  text-align: center;
+  padding: 40px;
+  font-weight: 600;
+  color: aliceblue;
+}
+
+.cart {
+
+  background: linear-gradient(to right, #ff3333, #f8ff339f);
+  min-height: 100vh;
+  padding: 40px;
+  width: auto;
+}
+
+.cartitems-container {
+  justify-content: center;
+
+}
+
+.cartitem-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+}
+
+.cartitem-details {
+  color: orange;
+}
+
+.item {
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  width: 70%;
+  height: 150px;
+}
+.btn{
+  margin-top: 20px;
+}
+
+.total {
+  color: white;
+  text-align: center;
+  padding: 30px;
+  font-weight: 800;
+}
+
+.add-remove {
+  padding: 1px 5px;
+  margin: 10px;
+  background-color: orange;
+  border-color: transparent;
+  font-weight: 800;
+  color: white;
+}
+
+.cart-heading {
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.cart-length{
+  background-color: black;
+  padding: 5px;
+  border-radius: 50px;
+}
+.cover-image{
+
+  height: fit-content;
+  max-width: 100%;
+  margin: 0px 0px -400px 0px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .item {
+      margin-bottom: 20px;
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 20px;
+      width: 100%;
+      height: 150px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .offer-img {
+      display: none;
+  }
+
+  .button {
+      height: 35px;
+      width: 80px;
+      border-radius: 5px;
+      border-color: transparent;
+      background-color: white;
+      color: orange;
+      font-size: 17px;
+      font-weight: 600;
+      margin-top: 10px;
+  }
+
+  .navbar-name {
+      font-size: 10px;
+      font-weight: 600;
+  }
+
+  .navbar ul li {
+      list-style: none;
+      display: block;
+  }
+  .cart-length{
+      display: none;
+  }
+  .cover-image{
+display: none;
+  }
+  .item-container {
+      background: linear-gradient(to right, #ff3333, #f8ff339f)
   }
 }
