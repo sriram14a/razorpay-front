@@ -3,13 +3,32 @@ import { useState } from "react";
 import { API } from "./source";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "./navbar";
-import axios from "axios";
 
 export function Cart() {
   const [cartitems, setCartitems] = useState([]);
+  const [userData, setUserData] = useState("");
+ 
+  useEffect(() => {
+    fetch(`${API}/user/userdata`, {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        token: window.localStorage.getItem("token"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => setUserData(data.data));
+  }, []);
+
+const email = userData.email
 
   const getDetails = () => {
-    fetch(`${API}/products/cartitems`, {
+    fetch(`${API}/products/cartitems/${email}`, {
       method: "GET",
     })
       .then((data) => data.json())
@@ -18,7 +37,7 @@ export function Cart() {
       });
   };
 
-  useEffect(() => getDetails(), []);
+  useEffect(() => getDetails(), [email]);
 
   const navigate = useNavigate();
 
@@ -71,10 +90,10 @@ const key = "rzp_test_DypJTWTkkevDJU"
         initPayment(data1.data);
       });
   }
-
+console.log(cartitems.length)
   return (
     <div>
-      <Navbar cartitem={cartitems.length} />
+      <Navbar cartitem = {cartitems.length} />
       <div className="cart">
         {cartitems.length === 0 && (
           <div className="noitems">

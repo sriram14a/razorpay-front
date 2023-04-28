@@ -85,6 +85,15 @@
   align-items: center;
   justify-content: space-between;
 }
+.profile{
+  align-items: center;
+  display: inline;
+}
+.list-items{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .offer-img {
   height: 80px;
@@ -205,6 +214,65 @@
   margin: 0px 0px -400px 0px;
 }
 
+.home-bg{
+  background-image: url("https://img.freepik.com/free-photo/black-friday-elements-assortment_23-2149074076.jpg?w=1060&t=st=1682599320~exp=1682599920~hmac=aa9d01a1f88f8a8a11b5cad4135cc1b500598e832c4fab3b976fbac8cfe6a1ad");
+  background-size: cover;
+  height: 100vh;
+  padding: 20px;
+}
+.login{
+  text-align: center;
+  color: whitesmoke;
+  margin-left: 100px;
+  height: 500px;
+  width: 400px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.181);
+  margin-top: 50px;
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.form-control{
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+  margin: 10px;
+  border: none; 
+}
+.form-size{
+  margin-top: 30px;
+ font-size: 25px;
+}
+.login-button{
+  margin-top:10px;
+  padding: 10px;
+  width: 80%;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color:black;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.forgotpassword-link{
+  font-size: 15px;
+  margin-top: 10px;
+}
+.forgotpassword-link:hover{
+  cursor: pointer;
+}
+.logout{
+  background-color: orange;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  
+}
+.logout:hover{
+  cursor: pointer;
+}
 
 
 @media only screen and (max-width: 600px) {
